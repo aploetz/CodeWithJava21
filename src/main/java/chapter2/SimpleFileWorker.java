@@ -60,6 +60,7 @@ public class SimpleFileWorker {
 				gameLine = reader.readLine();
 			}
 
+			reader.close();
 		} catch (IOException readerEx) {
 			System.out.println("Error occurred while writing:");
 			readerEx.printStackTrace();

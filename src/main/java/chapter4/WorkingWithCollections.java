@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -42,7 +43,7 @@ public class WorkingWithCollections {
 		printCollection(monsterList);
 		System.out.println(monsterList.get(1));
 		
-		List<String> cityList = new LinkedList<>();
+		LinkedList<String> cityList = new LinkedList<>();
 		cityList.add("Elddim");
 		cityList.add("Crystwind");
 		cityList.add("Fallraen");
@@ -50,7 +51,20 @@ public class WorkingWithCollections {
 		cityList.add("Lang");
 		
 		printCollection(cityList);
+		
+		System.out.println(cityList.get(3));
+		
+		cityList.remove("Meren");
+		printCollection(cityList);
 
+		System.out.println(cityList.peek());
+		System.out.println(cityList.peekLast());
+		printCollection(cityList);
+		
+		System.out.println(cityList.poll());
+		printCollection(cityList);
+
+		
 	}
 
 	private static void printCollection(Collection collection) {
@@ -60,5 +74,14 @@ public class WorkingWithCollections {
 		}
 		
 		System.out.println();
+	}
+	
+	private static void printMap(Map<Object,Object> map) {
+		
+		Set<Object> keys = map.keySet();
+		
+		for (Object key : keys) {
+			System.out.printf("%s: %s, ", key, map.get(key));
+		}
 	}
 }

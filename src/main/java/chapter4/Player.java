@@ -2,7 +2,7 @@ package chapter4;
 
 import java.util.Random;
 
-public class Player implements Comparable<String> {
+public class Player {
 	private Random random = new Random();
 	private String name;
 	private int attack;
@@ -76,16 +76,6 @@ public class Player implements Comparable<String> {
 		
 		if (this.hitPoints <= 0) {
 			this.alive = false;
-		}
-	}
-
-	@Override
-	public int compareTo(String name) {
-
-		if (this.name.equals(name)) {
-			return 1;
-		} else {
-			return 0;
 		}
 	}
 }

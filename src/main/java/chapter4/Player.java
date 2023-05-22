@@ -3,7 +3,7 @@ package chapter4;
 import java.util.Random;
 
 public class Player implements Comparable<String> {
-	private Random random;
+	private Random random = new Random();
 	private String name;
 	private int attack;
 	private int maxDamage;
@@ -74,6 +74,9 @@ public class Player implements Comparable<String> {
 	public void decrementHitPoints(int damage) {
 		this.hitPoints = this.hitPoints - damage;
 		
+		if (this.hitPoints <= 0) {
+			this.alive = false;
+		}
 	}
 
 	@Override

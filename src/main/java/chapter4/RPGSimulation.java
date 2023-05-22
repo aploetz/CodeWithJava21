@@ -8,29 +8,40 @@ import java.util.TreeMap;
 
 public class RPGSimulation {
 
+	// define Monster record
+	record Monster (String name, int attack, int maxDamage, int defense) {
+		static Random random = new Random();
+		static int hitPoints = 2;
+		static boolean alive = true;
+		
+		public int rollAttack() {
+			return random.nextInt(attack) + 1;
+		}
+		
+		public int rollDamage() {
+			return random.nextInt(maxDamage) + 1;
+		}
+		
+		public void decrementHitPoints(int damage) {
+			hitPoints = hitPoints - damage;
+			
+			if (hitPoints <= 0) {
+				alive = false;
+			}
+		}
+
+		public boolean isAlive() {
+			return alive;
+		}
+	}
+	
 	public static void main(String[] args) {
 
 		Random randomNumber = new Random();
 		int monsterCount = randomNumber.nextInt(4) + 1;
 		
-		// define Monster record
-		record Monster (String name, int attack, int maxDamage, int defense) {
-			static Random random = new Random();
-			static int hitPoints = 2;
-			static boolean alive = true;
-			
-			public int rollAttack() {
-				return random.nextInt(attack) + 1;
-			}
-			
-			public int rollDamage() {
-				return random.nextInt(maxDamage) + 1;
-			}
-		}
-		
 		// create new monsters
 		List<Monster> monsters = new ArrayList<>();
-		List<String> monsterNames = new ArrayList<>();
 		
 		for (int monsterIdx = 0; monsterIdx < monsterCount; monsterIdx++) {
 			
@@ -39,19 +50,15 @@ public class RPGSimulation {
 			switch (typeIdx) {
 			case 0:
 				monsters.add(new Monster("Kobald", 8, 8, 1));
-				monsterNames.add("Kobald");
 				break;
 			case 1:
 				monsters.add(new Monster("Skeleton", 8, 8, 2));
-				monsterNames.add("Skeleton");
 				break;
 			case 2:
 				monsters.add(new Monster("Zombie", 6, 6, 2));
-				monsterNames.add("Zombie");
 				break;
 			default:
 				monsters.add(new Monster("Rats", 6, 4, 1));				
-				monsterNames.add("Rats");
 			}
 		}
 		
@@ -69,52 +76,94 @@ public class RPGSimulation {
 		Hero tyrenni = new Hero("Tyrenni", 6, 2, 6, spellbook);
 		
 		List<Hero> heroes = new ArrayList<>();
-		List<String> heroNames = new ArrayList<>();
 		
 		heroes.add(byorki);
 		heroes.add(klar);
 		heroes.add(tyrenni);
-		heroNames.add(byorki.getName());
-		heroNames.add(klar.getName());
-		heroNames.add(tyrenni.getName());
 		
 		// decide initiative at random
-		List<String> playerOrder = generatePlayerOrder(heroNames, monsterNames);
-
+		List<Object> playerOrder = generatePlayerOrder(heroes, monsters);
 
 		// simulate game round
-		for (String playerName : playerOrder) {
+		for (Object player : playerOrder) {
+			System.out.println();
 			
-			// check if playerName is a hero or a monster
-			if (heroes.contains(playerName)) {
-				System.out.println("Hero! " + playerName);
+			// check if player is a hero or a monster
+			if (player instanceof Hero) {
+				if (((Hero) player).isAlive()) {
+					String name = ((Hero) player).getName();
+					
+					// pick a random monster
+					int monsterIndex = randomNumber.nextInt(monsters.size());
+					Monster targetMonster = monsters.get(monsterIndex);
+					
+					System.out.println(name + " attacks " + targetMonster.name());
+					
+					int attack = ((Hero) player).rollAttack(); 
+					if (attack >= targetMonster.defense) {
+						int damage = ((Hero) player).rollDamage();
+						System.out.println(name + " rolls a " + attack + " and hits " + targetMonster.name() + " for " + damage + " points.");
+						targetMonster.decrementHitPoints(damage);
+						
+						if (!targetMonster.isAlive()) {
+							System.out.println(targetMonster.name() + " is down!");						
+						}
+					} else {
+						System.out.println(name + " rolls a " + attack + " and misses " + targetMonster.name()); 					
+					}
+				}
 			} else {
-				System.out.println("Monster! " + playerName);
+				if (((Monster) player).isAlive()) {
+					String name = ((Monster) player).name();
+					
+					// pick a random hero
+					int heroIndex = randomNumber.nextInt(heroes.size());
+					Hero targetHero = heroes.get(heroIndex);
+					String heroName = targetHero.getName();
+
+					System.out.println(((Monster) player).name() + " attacks " + heroName);
+					
+					int attack = ((Monster) player).rollAttack();
+					if (attack >= targetHero.getDefense()) {
+						int damage = ((Monster) player).rollDamage();
+						System.out.println(name + " rolls a " + attack + " and hits " + heroName + " for " + damage + " points.");	
+						targetHero.decrementHitPoints(damage);
+						
+						if (!targetHero.isAlive()) {
+							System.out.println(heroName + " is down!");
+						}
+					} else {
+						System.out.println(name + " rolls a " + attack + " and misses " + heroName); 											
+					}
+				}
 			}
 		}
-
 	}
 
-	private static List<String> generatePlayerOrder(List<String> heroList, List<String> monsterList) {
+	private static List<Object> generatePlayerOrder(List<Hero> heroList, List<Monster> monsterList) {
 
-		List<String> returnValue = new ArrayList<>();
+		List<Hero> tempHeroList = new ArrayList<Hero>(List.copyOf(heroList));
+		List<Monster> tempMonsterList = new ArrayList<Monster>(List.copyOf(monsterList));
+		
+		List<Object> returnValue = new ArrayList<>();
 		Random random = new Random();		
 		int playerCount = heroList.size() + monsterList.size();
 		
 		while (returnValue.size() < playerCount) {
+			
 			if (random.nextBoolean()) {
-				if (!heroList.isEmpty()) {
-					int heroIndex = random.nextInt(heroList.size());
+				if (!tempHeroList.isEmpty()) {
+					int heroIndex = random.nextInt(tempHeroList.size());
 				
-					returnValue.add(heroList.get(heroIndex));
-					heroList.remove(heroIndex);
+					returnValue.add(tempHeroList.get(heroIndex));
+					tempHeroList.remove(heroIndex);
 				}
 			} else {
-				if (!monsterList.isEmpty()) {
-					int monsterIndex = random.nextInt(monsterList.size());
+				if (!tempMonsterList.isEmpty()) {
+					int monsterIndex = random.nextInt(tempMonsterList.size());
 					
-					returnValue.add(monsterList.get(monsterIndex));
-					monsterList.remove(monsterIndex);
+					returnValue.add(tempMonsterList.get(monsterIndex));
+					tempMonsterList.remove(monsterIndex);
 				}
 			}
 		}

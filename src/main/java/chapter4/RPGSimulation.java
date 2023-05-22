@@ -30,6 +30,7 @@ public class RPGSimulation {
 		
 		// create new monsters
 		List<Monster> monsters = new ArrayList<>();
+		List<String> monsterNames = new ArrayList<>();
 		
 		for (int monsterIdx = 0; monsterIdx < monsterCount; monsterIdx++) {
 			
@@ -37,16 +38,20 @@ public class RPGSimulation {
 			
 			switch (typeIdx) {
 			case 0:
-				monsters.add(new Monster("Kobald", 2, 8, 1));
+				monsters.add(new Monster("Kobald", 8, 8, 1));
+				monsterNames.add("Kobald");
 				break;
 			case 1:
-				monsters.add(new Monster("Skeleton", 2, 8, 2));
+				monsters.add(new Monster("Skeleton", 8, 8, 2));
+				monsterNames.add("Skeleton");
 				break;
 			case 2:
-				monsters.add(new Monster("Zombie", 1, 6, 2));
+				monsters.add(new Monster("Zombie", 6, 6, 2));
+				monsterNames.add("Zombie");
 				break;
 			default:
-				monsters.add(new Monster("Rats", 1, 4, 1));				
+				monsters.add(new Monster("Rats", 6, 4, 1));				
+				monsterNames.add("Rats");
 			}
 		}
 		
@@ -59,19 +64,61 @@ public class RPGSimulation {
 		spellbook.put("Transmutation", "Converts common items into gold.");
 		
 		// create Heroes
-		Hero byorki = new Hero("Byorki", 4, 5, 5);
-		Hero klar = new Hero("K'lar", 8, 12, 3);
-		Hero tyrenni = new Hero("Tyrenni", 4, 2, 6, spellbook);
+		Hero byorki = new Hero("Byorki", 8, 5, 5);
+		Hero klar = new Hero("K'lar", 10, 12, 3);
+		Hero tyrenni = new Hero("Tyrenni", 6, 2, 6, spellbook);
 		
 		List<Hero> heroes = new ArrayList<>();
+		List<String> heroNames = new ArrayList<>();
+		
 		heroes.add(byorki);
 		heroes.add(klar);
 		heroes.add(tyrenni);
+		heroNames.add(byorki.getName());
+		heroNames.add(klar.getName());
+		heroNames.add(tyrenni.getName());
 		
 		// decide initiative at random
-		List<String> playerOrder = new ArrayList();
-		
-		
+		List<String> playerOrder = generatePlayerOrder(heroNames, monsterNames);
+
+
+		// simulate game round
+		for (String playerName : playerOrder) {
+			
+			// check if playerName is a hero or a monster
+			if (heroes.contains(playerName)) {
+				System.out.println("Hero! " + playerName);
+			} else {
+				System.out.println("Monster! " + playerName);
+			}
+		}
+
 	}
 
+	private static List<String> generatePlayerOrder(List<String> heroList, List<String> monsterList) {
+
+		List<String> returnValue = new ArrayList<>();
+		Random random = new Random();		
+		int playerCount = heroList.size() + monsterList.size();
+		
+		while (returnValue.size() < playerCount) {
+			if (random.nextBoolean()) {
+				if (!heroList.isEmpty()) {
+					int heroIndex = random.nextInt(heroList.size());
+				
+					returnValue.add(heroList.get(heroIndex));
+					heroList.remove(heroIndex);
+				}
+			} else {
+				if (!monsterList.isEmpty()) {
+					int monsterIndex = random.nextInt(monsterList.size());
+					
+					returnValue.add(monsterList.get(monsterIndex));
+					monsterList.remove(monsterIndex);
+				}
+			}
+		}
+		
+		return returnValue;
+	}
 }

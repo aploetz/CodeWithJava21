@@ -2,7 +2,7 @@ package chapter4;
 
 import java.util.Random;
 
-public class Player {
+public class Player implements Comparable<String> {
 	private Random random;
 	private String name;
 	private int attack;
@@ -55,10 +55,6 @@ public class Player {
 		return defense;
 	}
 	
-	protected void setHitPoints(int hitPoints) {
-		this.hitPoints = hitPoints;
-	}
-	
 	public void setDefense(int defense) {
 		this.defense = defense;
 	}
@@ -66,13 +62,27 @@ public class Player {
 	public int getHitPoints() {
 		return this.hitPoints;
 	}
+
+	protected void setHitPoints(int hitPoints) {
+		this.hitPoints = hitPoints;
+	}
+
+	public boolean isAlive() {
+		return this.alive;
+	}
 	
 	public void decrementHitPoints(int damage) {
 		this.hitPoints = this.hitPoints - damage;
 		
 	}
-	
-	public boolean isAlive() {
-		return this.alive;
+
+	@Override
+	public int compareTo(String name) {
+
+		if (this.name.equals(name)) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 }

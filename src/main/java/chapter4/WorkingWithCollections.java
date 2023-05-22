@@ -94,20 +94,22 @@ public class WorkingWithCollections {
 					exitDesc.append("There is an exit to the ");
 					exitDesc.append(exits.get(0));
 				} else if (exits.size() == 2) {
+					exitDesc.append("There are exits to the ");
 					exitDesc.append(exits.get(0));
 					exitDesc.append(" and ");
 					exitDesc.append(exits.get(1));
 				} else {
 					exitDesc.append("There are exits to the ");
 
+					boolean first = true;
+					
 					for (String exit : exits) {
-						if (exit.equals(exits.getLast())) {
-							exitDesc.append("and ");
+							if (!first) {
+								exitDesc.append(", ");
+							} else {
+								first = false;
+							}
 							exitDesc.append(exit);
-						} else {
-							exitDesc.append(exit);
-							exitDesc.append(", ");
-						}
 					}
 				}
 				
@@ -117,8 +119,7 @@ public class WorkingWithCollections {
 			}
 		}
 		
-		List<String> cabinExits = new ArrayList();
-		cabinExits.add("North");
+		List<String> cabinExits = new ArrayList<>();
 		cabinExits.add("South");
 		cabinExits.add("West");
 		
@@ -126,7 +127,7 @@ public class WorkingWithCollections {
 				+ " on a lake, with water visible to the South and East. There is"
 				+ " a red dock to the South.", cabinExits);
 		
-		System.out.println(lakeCabin.Description());
+		System.out.println(lakeCabin.description());
 		System.out.println(lakeCabin.getExits());
 	}
 

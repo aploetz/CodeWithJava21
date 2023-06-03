@@ -27,6 +27,20 @@ public class MathExamples {
 		System.out.println(intNumA + " to the power of " + intNumB + " = "
 			    + exponent(intNumA,intNumB));
 
+		System.out.println();
+		
+		double dblNumC = 3.1;
+		double dblNumD = 5.2;
+		
+		System.out.println(dblNumC + " + " + dblNumD + " = "
+				+ add(dblNumC,dblNumD));
+
+		double dblNumE = 0.1;
+		double dblNumF = 0.2;
+
+		System.out.println(dblNumE + " + " + dblNumF + " = "
+				+ add(dblNumE,dblNumF));
+
 	}
 
 	public static int add(int intNum1, int intNum2) {
@@ -51,5 +65,9 @@ public class MathExamples {
 	
 	public static int exponent(int base, int power) {
 		return (int) Math.pow(base, power);
+	}
+	
+	public static double add(double dblNum1, double dblNum2) {
+		return dblNum1 + dblNum2;
 	}
 }

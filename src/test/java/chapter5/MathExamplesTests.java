@@ -35,4 +35,9 @@ class MathExamplesTests {
 	void testExponent() {
 		assertEquals(125,MathExamples.exponent(5, 3));
 	}
+	
+	@Test
+	void testFloatAdd() {
+		assertEquals(3.3,MathExamples.add(2.1, 1.2));
+	}
 }

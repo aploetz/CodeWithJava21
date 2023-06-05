@@ -2,7 +2,7 @@ package chapter6;
 
 public class Stack {
 
-	private Item items[];
+	private Item[] items;
 	private int maxCount;
 	private int stackCount = 0;
 	
@@ -21,7 +21,7 @@ public class Stack {
 		maxCount = maxCount + 5;
 		
 		// instantiate larger items array
-		Item newArray[] = new Item[maxCount];
+		Item[] newArray = new Item[maxCount];
 		
 		// copy current items array to new
 		for (int counter = 0; counter < stackCount; counter++) {

@@ -43,8 +43,14 @@ public class Stack {
 	}
 	
 	public Item pop() {
-		Item returnVal = items[stackCount - 1];
+		Item returnVal = peek();
 		stackCount--;
+		return returnVal;
+	}
+	
+	public Item peek() {
+		Item returnVal = items[stackCount - 1];
+		
 		return returnVal;
 	}
 	

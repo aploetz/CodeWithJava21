@@ -33,7 +33,7 @@ public class Queue {
 	}
 	
 	public Item getFront() {
-		if (queueCount >= 0) {
+		if (queueCount > 0) {
 			return items[0];
 		} else {
 			return null;
@@ -41,7 +41,7 @@ public class Queue {
 	}
 	
 	public Item getBack() {
-		if (queueCount >= 0) {
+		if (queueCount > 0) {
 			return items[queueCount - 1];
 		} else {
 			return null;

@@ -34,7 +34,7 @@ public class Tree {
 		}
 		
 		traverse(node.getLeftNode());
-		System.out.println(node.getNumber());
+		System.out.println(node.getValue());
 		traverse(node.getRightNode());
 	}
 	
@@ -48,7 +48,7 @@ public class Tree {
 		}
 
 		reverse(node.getRightNode());
-		System.out.println(node.getNumber());
+		System.out.println(node.getValue());
 		reverse(node.getLeftNode());
 	}
 }

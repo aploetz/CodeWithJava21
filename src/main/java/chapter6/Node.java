@@ -2,23 +2,23 @@ package chapter6;
 
 public class Node {
 
-	private int number;
+	private int value;
 	private Node leftNode;
 	private Node rightNode;
 	
 	public Node (int number) {
-		this.number = number;
+		this.value = number;
 	}
 	
 	public void insert(int newNumber) {
 		
-		if (newNumber < this.number) {
+		if (newNumber < this.value) {
 			if (leftNode == null) {
 				leftNode = new Node(newNumber);
 			} else {
 				leftNode.insert(newNumber);
 			}
-		} else if (newNumber > this.number) {
+		} else if (newNumber > this.value) {
 			if (rightNode == null) {
 				rightNode = new Node(newNumber);
 			} else {
@@ -35,7 +35,7 @@ public class Node {
 		return this.rightNode;
 	}
 	
-	public int getNumber() {
-		return this.number;
+	public int getValue() {
+		return this.value;
 	}
 }

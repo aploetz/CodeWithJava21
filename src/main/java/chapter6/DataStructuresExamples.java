@@ -40,7 +40,7 @@ public class DataStructuresExamples {
 		stack.push(starwars);
 		
 		System.out.println(stack);
-		
+				
 		System.out.println("Queue example:");
 		
 		Queue queue = new Queue();
@@ -57,6 +57,46 @@ public class DataStructuresExamples {
 		System.out.println(queue.dequeue().getName() + " was dequeued.");
 
 		System.out.println(queue);
+		
+		System.out.println("Linked List example:");
+
+		LinkedList linkedList = new LinkedList();
+		
+		Item elddim = new Item("Elddim");
+		Item crystwind = new Item("Crystwind");
+		Item fallraen = new Item("Fallraen");
+		Item meren = new Item("Meren");
+		Item lang = new Item("Lang");
+		Item hiroth = new Item("Hiroth");
+		
+		linkedList.addItem(lang);
+		linkedList.addItem(meren);
+		linkedList.addItem(fallraen);
+		linkedList.addItem(crystwind);
+		linkedList.addItem(elddim);
+
+		System.out.println(linkedList);
+		
+		System.out.println("Does the list contain " + crystwind.getName() + "?");
+		
+		if (linkedList.findItemByName(crystwind.getName()) != null) {
+			System.out.println("Yes!");
+		} else {
+			System.out.println("No, not found.");
+		}
+
+		System.out.println("Does the list contain " + hiroth.getName() + "?");
+
+		if (linkedList.findItemByName(hiroth.getName()) != null) {
+			System.out.println("Yes!");
+		} else {
+			System.out.println("No, not found.");
+		}
+		
+		System.out.println("Now remove " + meren.getName());
+		linkedList.removeItemByName(meren.getName());
+		
+		System.out.println(linkedList);
 		
 		System.out.println("Tree example:");
 		

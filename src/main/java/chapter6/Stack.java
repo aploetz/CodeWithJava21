@@ -59,6 +59,7 @@ public class Stack {
 	}
 	
 	public String toString() {
+		
 		StringBuilder returnVal = new StringBuilder("\n");
 		
 		for (int counter = stackCount - 1; counter >= 0; counter--) {

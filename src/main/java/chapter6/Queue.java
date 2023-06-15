@@ -79,6 +79,7 @@ public class Queue {
 	}
 	
 	public String toString() {
+		
 		StringBuilder returnVal = new StringBuilder("\n");
 		
 		for (int counter = 0; counter < queueCount; counter++) {

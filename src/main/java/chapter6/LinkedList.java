@@ -52,7 +52,7 @@ public class LinkedList {
 		
 		Item currentItem = firstItem;
 		
-		while (currentItem.getNextItem() != null) {
+		while (currentItem != null) {
 			if (currentItem.getName().equals(name)) {
 				// found!
 				return currentItem;

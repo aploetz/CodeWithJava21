@@ -1,13 +1,3 @@
-CREATE TABLE astronauts (
-    name VARCHAR(100) PRIMARY KEY,
-    nasa_group_id INT,
-    dob DATE,
-    birthplace VARCHAR(50),
-    university_id INT,
-    FOREIGN KEY(nasa_group_id) REFERENCES nasa_group(id),
-    FOREIGN KEY(university_id) REFERENCES university(id)    
-);    
-    
 CREATE TABLE nasa_group (
     id INT PRIMARY KEY,
     year INT
@@ -23,6 +13,16 @@ CREATE TABLE missions (
     name VARCHAR(50),
     start_date TIMESTAMP,
     end_date TIMESTAMP
+);
+
+CREATE TABLE astronauts (
+    name VARCHAR(100) PRIMARY KEY,
+    nasa_group_id INT,
+    dob DATE,
+    birthplace VARCHAR(50),
+    university_id INT,
+    FOREIGN KEY(nasa_group_id) REFERENCES nasa_group(id),
+    FOREIGN KEY(university_id) REFERENCES university(id)    
 );
 
 CREATE TABLE astronaut_missions (

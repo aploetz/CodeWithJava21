@@ -1,3 +1,102 @@
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Buzz Aldrin','1930-01-20','Montclair, NJ', 3, 1963, 'US Military Academy');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Neil Armstrong','1930-08-05','Wapakoneta, OH', 2, 1962, 'Purdue University');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Frank Borman','1928-03-14','Gary, IN', 2, 1962, 'US Military Academy');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Gene Cernan','1934-03-14','Chicago, IL', 3, 1963, 'Purdue University');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Michael Collins','1930-10-31','Rome, Italy', 3, 1963, 'US Military Academy');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Pete Conrad','1930-05-02','Philadelphia, PA', 2, 1962, 'Princeton University');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Gordon Cooper','1927-03-06','Shawnee, OK', 1, 1959, 'Air Force Institute of Technology');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Richard Gordon','1929-10-05','Seattle, WA', 3, 1963, 'University of Washington');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Gus Grissom','1926-04-03','Mitchell, IN', 1, 1959, 'Purdue University');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Jim Lovell','1928-03-25','Cleveland, OH', 2, 1962, 'US Naval Academy');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Jim McDivitt','1929-06-10','Chicago, IL', 2, 1962, 'University of Michigan');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Wally Schirra','1923-03-12','Hackensack, NJ', 1, 1959, 'US Naval Academy');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Dave Scott','1932-06-06','San Antonio, TX', 3, 1963, 'US Military Academy');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Tom Stafford','1930-09-17','Weatherford, OK', 2, 1962, 'US Naval Academy');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Ed White','1930-11-14','San Antonio, TX', 2, 1962, 'US Military Academy');
+INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('John Young','1930-09-24','San Francisco, CA', 2, 1962, 'Georgia Institute of Technology');
+
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Buzz Aldrin','1930-01-20','Montclair, NJ', 3, 1963, 'US Military Academy');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Neil Armstrong','1930-08-05','Wapakoneta, OH', 2, 1962, 'Purdue University');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Frank Borman','1928-03-14','Gary, IN', 2, 1962, 'US Military Academy');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Gene Cernan','1934-03-14','Chicago, IL', 3, 1963, 'Purdue University');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Michael Collins','1930-10-31','Rome, Italy', 3, 1963, 'US Military Academy');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Pete Conrad','1930-05-02','Philadelphia, PA', 2, 1962, 'Princeton University');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Gordon Cooper','1927-03-06','Shawnee, OK', 1, 1959, 'Air Force Institute of Technology');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Richard Gordon','1929-10-05','Seattle, WA', 3, 1963, 'University of Washington');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Gus Grissom','1926-04-03','Mitchell, IN', 1, 1959, 'Purdue University');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Jim Lovell','1928-03-25','Cleveland, OH', 2, 1962, 'US Naval Academy');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Jim McDivitt','1929-06-10','Chicago, IL', 2, 1962, 'University of Michigan');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Wally Schirra','1923-03-12','Hackensack, NJ', 1, 1959, 'US Naval Academy');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Dave Scott','1932-06-06','San Antonio, TX', 3, 1963, 'US Military Academy');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Tom Stafford','1930-09-17','Weatherford, OK', 2, 1962, 'US Naval Academy');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Ed White','1930-11-14','San Antonio, TX', 2, 1962, 'US Military Academy');
+INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('John Young','1930-09-24','San Francisco, CA', 2, 1962, 'Georgia Institute of Technology');
+
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Buzz Aldrin','1930-01-20','Montclair, NJ', 3, 1963, 'US Military Academy');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Neil Armstrong','1930-08-05','Wapakoneta, OH', 2, 1962, 'Purdue University');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Frank Borman','1928-03-14','Gary, IN', 2, 1962, 'US Military Academy');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Gene Cernan','1934-03-14','Chicago, IL', 3, 1963, 'Purdue University');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Michael Collins','1930-10-31','Rome, Italy', 3, 1963, 'US Military Academy');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Pete Conrad','1930-05-02','Philadelphia, PA', 2, 1962, 'Princeton University');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Gordon Cooper','1927-03-06','Shawnee, OK', 1, 1959, 'Air Force Institute of Technology');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Richard Gordon','1929-10-05','Seattle, WA', 3, 1963, 'University of Washington');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Gus Grissom','1926-04-03','Mitchell, IN', 1, 1959, 'Purdue University');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Jim Lovell','1928-03-25','Cleveland, OH', 2, 1962, 'US Naval Academy');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Jim McDivitt','1929-06-10','Chicago, IL', 2, 1962, 'University of Michigan');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Wally Schirra','1923-03-12','Hackensack, NJ', 1, 1959, 'US Naval Academy');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Dave Scott','1932-06-06','San Antonio, TX', 3, 1963, 'US Military Academy');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Tom Stafford','1930-09-17','Weatherford, OK', 2, 1962, 'US Naval Academy');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('Ed White','1930-11-14','San Antonio, TX', 2, 1962, 'US Military Academy');
+INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
+VALUES ('John Young','1930-09-24','San Francisco, CA', 2, 1962, 'Georgia Institute of Technology');
+
 INSERT INTO astronauts_by_mission (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name, mission_name, mission_start_date, mission_end_date)
 VALUES ('Gus Grissom','1926-04-03','Mitchell, IN', 1, 1959, 'Purdue University','Gemini 3', '1965-03-23 14:24:00', '1965-03-23 17:16:31');
 INSERT INTO astronauts_by_mission (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name, mission_name, mission_start_date, mission_end_date)
@@ -37,7 +136,7 @@ VALUES ('Pete Conrad','1930-05-02','Philadelphia, PA', 2, 1962, 'Princeton Unive
 INSERT INTO astronauts_by_mission (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name, mission_name, mission_start_date, mission_end_date)
 VALUES ('Buzz Aldrin','1930-01-20','Montclair, NJ', 3, 1963, 'US Military Academy', 'Gemini 12', '1966-11-11 20:46:33', '1966-11-15 19:21:04');
 INSERT INTO astronauts_by_mission (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name, mission_name, mission_start_date, mission_end_date)
-VALUES ('Jim Lovell','1928-03-25','Cleveland, OH', 2, 1962, 'US Naval Academy','Gemini 12', '1966-11-11 20:46:33', '1966-11-15 19:21:04);
+VALUES ('Jim Lovell','1928-03-25','Cleveland, OH', 2, 1962, 'US Naval Academy','Gemini 12', '1966-11-11 20:46:33', '1966-11-15 19:21:04');
 INSERT INTO astronauts_by_mission (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name, mission_name, mission_start_date, mission_end_date)
 VALUES ('Gus Grissom','1926-04-03','Mitchell, IN', 1, 1959, 'Purdue University','Mercury 4', '1961-07-21 12:20:36', '1961-07-21 12:36:13');
 INSERT INTO astronauts_by_mission (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name, mission_name, mission_start_date, mission_end_date)
@@ -90,102 +189,3 @@ INSERT INTO astronauts_by_mission (astronaut_name, dob, birthplace, nasa_group_i
 VALUES ('Tom Stafford','1930-09-17','Weatherford, OK', 2, 1962, 'US Naval Academy', 'Apollo-Soyuz Test Project', '1975-07-15 19:50', '1975-07-24 21:18');
 INSERT INTO astronauts_by_mission (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name, mission_name, mission_start_date, mission_end_date)
 VALUES ('Pete Conrad','1930-05-02','Philadelphia, PA', 2, 1962, 'Princeton University', 'Skylab 2', '1973-05-25', '1973-06-22 13:49:48');
-
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Buzz Aldrin','1930-01-20','Montclair, NJ', 3, 1963, 'US Military Academy');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Neil Armstrong','1930-08-05','Wapakoneta, OH', 2, 1962, 'Purdue University');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Frank Borman','1928-03-14','Gary, IN', 2, 1962, 'US Military Academy');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Gene Cernan','1934-03-14','Chicago, IL', 3, 1963, 'Purdue University');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Michael Collins','1930-10-31','Rome, Italy', 3, 1963, 'US Military Academy');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Pete Conrad','1930-05-02','Philadelphia, PA', 2, 1962, 'Princeton University');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Gordon Cooper','1927-03-06','Shawnee, OK', 1, 1959, 'Air Force Institute of Technology');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Richard Gordon','1929-10-05','Seattle, WA', 3, 1963, 'University of Washington');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Gus Grissom','1926-04-03','Mitchell, IN', 1, 1959, 'Purdue University');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Jim Lovell','1928-03-25','Cleveland, OH', 2, 1962, 'US Naval Academy');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Jim McDivitt','1929-06-10','Chicago, IL', 2, 1962, 'University of Michigan');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Wally Schirra','1923-03-12','Hackensack, NJ', 1, 1959, 'US Naval Academy');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Dave Scott','1932-06-06','San Antonio, TX', 3, 1963, 'US Military Academy');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Tom Stafford','1930-09-17','Weatherford, OK', 2, 1962, 'US Naval Academy');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Ed White','1930-11-14','San Antonio, TX', 2, 1962, 'US Military Academy');
-INSERT INTO astronauts_by_university (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('John Young','1930-09-24','San Francisco, CA', 2, 1962, 'Georgia Institute of Technology');
-
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Buzz Aldrin','1930-01-20','Montclair, NJ', 3, 1963, 'US Military Academy');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Neil Armstrong','1930-08-05','Wapakoneta, OH', 2, 1962, 'Purdue University');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Frank Borman','1928-03-14','Gary, IN', 2, 1962, 'US Military Academy');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Gene Cernan','1934-03-14','Chicago, IL', 3, 1963, 'Purdue University');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Michael Collins','1930-10-31','Rome, Italy', 3, 1963, 'US Military Academy');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Pete Conrad','1930-05-02','Philadelphia, PA', 2, 1962, 'Princeton University');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Gordon Cooper','1927-03-06','Shawnee, OK', 1, 1959, 'Air Force Institute of Technology');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Richard Gordon','1929-10-05','Seattle, WA', 3, 1963, 'University of Washington');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Gus Grissom','1926-04-03','Mitchell, IN', 1, 1959, 'Purdue University');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Jim Lovell','1928-03-25','Cleveland, OH', 2, 1962, 'US Naval Academy');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Jim McDivitt','1929-06-10','Chicago, IL', 2, 1962, 'University of Michigan');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Wally Schirra','1923-03-12','Hackensack, NJ', 1, 1959, 'US Naval Academy');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Dave Scott','1932-06-06','San Antonio, TX', 3, 1963, 'US Military Academy');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Tom Stafford','1930-09-17','Weatherford, OK', 2, 1962, 'US Naval Academy');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Ed White','1930-11-14','San Antonio, TX', 2, 1962, 'US Military Academy');
-INSERT INTO astronauts_by_group (astronaut_name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('John Young','1930-09-24','San Francisco, CA', 2, 1962, 'Georgia Institute of Technology');
-
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Buzz Aldrin','1930-01-20','Montclair, NJ', 3, 1963, 'US Military Academy');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Neil Armstrong','1930-08-05','Wapakoneta, OH', 2, 1962, 'Purdue University');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Frank Borman','1928-03-14','Gary, IN', 2, 1962, 'US Military Academy');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Gene Cernan','1934-03-14','Chicago, IL', 3, 1963, 'Purdue University');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Michael Collins','1930-10-31','Rome, Italy', 3, 1963, 'US Military Academy');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Pete Conrad','1930-05-02','Philadelphia, PA', 2, 1962, 'Princeton University');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Gordon Cooper','1927-03-06','Shawnee, OK', 1, 1959, 'Air Force Institute of Technology');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Richard Gordon','1929-10-05','Seattle, WA', 3, 1963, 'University of Washington');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Gus Grissom','1926-04-03','Mitchell, IN', 1, 1959, 'Purdue University');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Jim Lovell','1928-03-25','Cleveland, OH', 2, 1962, 'US Naval Academy');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Jim McDivitt','1929-06-10','Chicago, IL', 2, 1962, 'University of Michigan');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Wally Schirra','1923-03-12','Hackensack, NJ', 1, 1959, 'US Naval Academy');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Dave Scott','1932-06-06','San Antonio, TX', 3, 1963, 'US Military Academy');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Tom Stafford','1930-09-17','Weatherford, OK', 2, 1962, 'US Naval Academy');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('Ed White','1930-11-14','San Antonio, TX', 2, 1962, 'US Military Academy');
-INSERT INTO astronauts (name, dob, birthplace, nasa_group_id, nasa_group_year, university_name)
-VALUES ('John Young','1930-09-24','San Francisco, CA', 2, 1962, 'Georgia Institute of Technology');

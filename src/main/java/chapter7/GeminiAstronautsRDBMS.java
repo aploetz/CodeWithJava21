@@ -1,7 +1,5 @@
 package chapter7;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,17 +11,22 @@ import java.util.Random;
 
 public class GeminiAstronautsRDBMS {
 
-	private static Connection postgres;
+	private static PostgresConn postgres;
 	
 	public static void main(String[] args) {
-		
-		connectToPostgres();
+		// get database creds
+		// from ElephantSQL - postgres://iubylxio:QYKQfZNgDFShS_EY8lcpAh1yZoi6nbA0@rajje.db.elephantsql.com/iubylxio
+		// works! jdbc:postgresql://rajje.db.elephantsql.com/iubylxio
+		String url = System.getenv("POSTGRES_URL");
+        String username = System.getenv("POSTGRES_USER");
+        String password = System.getenv("POSTGRES_PASSWORD");
+		postgres = new PostgresConn(url, username, password);
 
 		System.out.println("Project Gemini Astronauts:");
 		
 		try {
 			String astronautSQL = "SELECT name FROM astronauts LIMIT 20;";
-			Statement pgStatement = postgres.createStatement();
+			Statement pgStatement = postgres.getConn().createStatement();
 			ResultSet geminiAstronauts = pgStatement.executeQuery(astronautSQL);
 			
 			while (geminiAstronauts.next()) {
@@ -46,7 +49,7 @@ public class GeminiAstronautsRDBMS {
 					+ "INNER JOIN missions m ON m.id = am.mission_id "
 					+ "WHERE m.name = ?;";
 
-			PreparedStatement missionStatement = postgres.prepareStatement(missionSQL);			
+			PreparedStatement missionStatement = postgres.getConn().prepareStatement(missionSQL);			
 			
 			for (Integer missionNum : randomMissions) {
 				
@@ -69,30 +72,6 @@ public class GeminiAstronautsRDBMS {
 			System.out.println(e.getMessage());
 		}
 		
-		closePostgresConnection();
-	}
-
-	private static void connectToPostgres() {
-		
-		// from ElephantSQL - postgres://iubylxio:QYKQfZNgDFShS_EY8lcpAh1yZoi6nbA0@rajje.db.elephantsql.com/iubylxio
-		// works! jdbc:postgresql://rajje.db.elephantsql.com/iubylxio
-		String url = System.getenv("POSTGRES_URL");
-        String username = System.getenv("POSTGRES_USER");
-        String password = System.getenv("POSTGRES_PASSWORD");
-
-        try {
-        	// connects to database
-        	postgres = DriverManager.getConnection(url, username, password);
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-	}
-	
-	private static void closePostgresConnection() {
-		try {
-			postgres.close();
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
+		postgres.closePostgresConnection();
 	}
 }

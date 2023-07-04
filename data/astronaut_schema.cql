@@ -15,7 +15,7 @@ CREATE TABLE astronauts_by_group (
     birthplace TEXT,
     university_name TEXT,
     PRIMARY KEY (nasa_group_id, astronaut_name)
-);
+) WITH CLUSTERING ORDER BY (astronaut_name ASC);
 
 CREATE TABLE astronauts_by_university (
     university_name TEXT,

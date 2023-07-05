@@ -2,32 +2,31 @@ package chapter7;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
-import chapter7.AstronautPostgresDAL.AstronautMission;
+import chapter7.AstronautCassandraDAL.AstronautMission;
 
-import java.util.Random;
-
-public class GeminiAstronautsRDBMS {
-	
+public class GeminiAstronautsNoSQL {
+			    
 	public static void main(String[] args) {
-		// get database creds
-		// from ElephantSQL - postgres://iubylxio:QYKQfZNgDFShS_EY8lcpAh1yZoi6nbA0@rajje.db.elephantsql.com/iubylxio
-		// works! jdbc:postgresql://rajje.db.elephantsql.com/iubylxio
-		String url = System.getenv("POSTGRES_URL");
-        String username = System.getenv("POSTGRES_USER");
-        String password = System.getenv("POSTGRES_PASSWORD");
 
-        AstronautPostgresDAL astronautDAL = new AstronautPostgresDAL(url, username, password);
+		String bundleLoc = System.getenv("ASTRA_DB_BUNDLE");
+        String username = System.getenv("ASTRA_DB_USER");
+        String password = System.getenv("ASTRA_DB_PASSWORD");
+        String keyspace = System.getenv("ASTRA_DB_KEYSPACE");
         
-		System.out.println("Project Gemini Astronauts:");
+        AstronautCassandraDAL astronautDAL = 
+        		new AstronautCassandraDAL(username, password, bundleLoc, keyspace);
+        
+        System.out.println("Project Gemini Astronauts:");
 
 		List<String> geminiAstronauts = astronautDAL.getGeminiRoster();
-			
+		
 		for (String astronaut : geminiAstronauts) {
 			System.out.println(astronaut);
 		}
-			
+		
 		System.out.println();
 
 		Set<Integer> randomMissions = new HashSet<>();
@@ -42,7 +41,7 @@ public class GeminiAstronautsRDBMS {
 			
 			StringBuilder mission = new StringBuilder("Gemini ");
 			mission.append(missionNum.toString());
-			List<AstronautMission> missionAstronauts =
+			List<AstronautMission> missionAstronauts = 
 					astronautDAL.getMissionAstronauts(mission.toString());
 			
 			for (AstronautMission astronautMission : missionAstronauts) {
@@ -54,7 +53,5 @@ public class GeminiAstronautsRDBMS {
 			
 			System.out.println();
 		}
-		
-		astronautDAL.closeConnection();
 	}
 }

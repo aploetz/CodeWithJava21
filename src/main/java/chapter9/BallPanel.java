@@ -16,8 +16,8 @@ public class BallPanel extends JPanel implements Runnable {
 	
 	private final int fPS = 60; // frames per second
 	
-	private int screenWidth;
-	private int screenHeight;
+	private int panelWidth;
+	private int panelHeight;
 	private int middleWidth;
 	private int middleHeight;
 	
@@ -30,14 +30,14 @@ public class BallPanel extends JPanel implements Runnable {
 	}
 	
 	public BallPanel(int width, int height) {
-		screenWidth = width;
-		screenHeight = height;
-		middleWidth = screenWidth / 2;
-		middleHeight = screenHeight / 2;
+		panelWidth = width;
+		panelHeight = height;
+		middleWidth = panelWidth / 2;
+		middleHeight = panelHeight / 2;
 
 		panelThread = new Thread(this);
 
-		this.setPreferredSize(new Dimension(screenWidth, screenHeight));
+		this.setPreferredSize(new Dimension(panelWidth, panelHeight));
 		this.setBackground(Color.black);
 		this.setDoubleBuffered(true);
 		this.setFocusable(true);

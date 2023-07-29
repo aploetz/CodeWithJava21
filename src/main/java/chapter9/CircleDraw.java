@@ -6,18 +6,16 @@ public class CircleDraw {
 
 	public static void main(String[] args) {
 
-		JFrame window = new JFrame();
+		JFrame frame = new JFrame();
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("Planet Orbits");
+		frame.setVisible(true);
+
 		BallPanel panel = new BallPanel();
-		
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//window.setResizable(false);
-		window.setTitle("Planet Orbits");
-		window.add(panel);
-		window.pack();
-		window.setLocationRelativeTo(null);
-		window.setVisible(true);
-		
+		frame.add(panel);
+		frame.pack();
+
 		panel.start();
 	}
-
 }

@@ -39,7 +39,6 @@ public class BallPanel extends JPanel implements Runnable {
 
 		this.setPreferredSize(new Dimension(panelWidth, panelHeight));
 		this.setBackground(Color.black);
-		this.setDoubleBuffered(true);
 		this.setFocusable(true);
 		
 		this.planetList = new ArrayList<>();

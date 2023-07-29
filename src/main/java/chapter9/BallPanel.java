@@ -57,15 +57,29 @@ public class BallPanel extends JPanel implements Runnable {
 	public void run() {
 
 		while (panelThread != null) {
+			double startTime = System.nanoTime();
+			double drawIntervalNanos = 1000000000/fPS;
+			
 			update();
 			repaint();
 			
 			// compute pauses based on frames per second
 			try {
-				Thread.sleep(1000 / fPS);
+				double elapsedTimeInNanos = Math.abs(System.nanoTime() - startTime);
+				double sleepTimeNanos = drawIntervalNanos - (long) elapsedTimeInNanos;
+				long sleepTime = (long)(sleepTimeNanos / 1000000);
+				
+				Thread.sleep(sleepTime);
+				System.out.println("startTime = " + startTime);
+				System.out.println("drawInterval = " + drawIntervalNanos);
+				System.out.println("elapsedTimeInNanos = " + elapsedTimeInNanos);
+				System.out.println("sleepTimeNanos = " + sleepTimeNanos);
+				System.out.println("sleepTime = " + sleepTime);
+				System.out.println();
+
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-			}
+			}			
 		}
 	}
 

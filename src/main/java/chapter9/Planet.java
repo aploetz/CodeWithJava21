@@ -25,7 +25,6 @@ public class Planet {
 	private void computeNewXY() {
 
 		int distRadius = distance / 2;
-		int radius = getRadius();
 		
 		coordX = (int) (distRadius * Math.cos(degree * Math.PI / 180));
 		coordY = (int) (distRadius * Math.sin(degree * Math.PI / 180));

@@ -10,7 +10,7 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
-public class BallPanel extends JPanel implements Runnable {
+public class SolarSystem extends JPanel implements Runnable {
 
 	private static final long serialVersionUID = -6923126786235441890L;
 	
@@ -25,17 +25,19 @@ public class BallPanel extends JPanel implements Runnable {
 	
 	private Thread panelThread;
 	
-	public BallPanel() {
+	public SolarSystem() {
 		this(1024,1024);
 	}
 	
-	public BallPanel(int width, int height) {
+	public SolarSystem(int width, int height) {
 		panelWidth = width;
 		panelHeight = height;
 		middleWidth = panelWidth / 2;
 		middleHeight = panelHeight / 2;
-
-		panelThread = new Thread(this);
+		
+		panelThread = Thread.ofVirtual()
+				.name("solarSystemThread")
+				.unstarted(this);
 
 		this.setPreferredSize(new Dimension(panelWidth, panelHeight));
 		this.setBackground(Color.black);
@@ -55,26 +57,28 @@ public class BallPanel extends JPanel implements Runnable {
 	@Override
 	public void run() {
 
-		while (panelThread != null) {
-			double startTime = System.nanoTime();
-			double drawIntervalNanos = 1000000000/fPS;
+		//while (isRunning) {
+		while (panelThread.isAlive()) {
+			//double startTime = System.nanoTime();
+			//double drawIntervalNanos = 1000000000/fPS;
 			
 			update();
 			repaint();
 			
 			// compute pauses based on frames per second
 			try {
-				double elapsedTimeInNanos = Math.abs(System.nanoTime() - startTime);
-				double sleepTimeNanos = drawIntervalNanos - (long) elapsedTimeInNanos;
-				long sleepTime = (long)(sleepTimeNanos / 1000000);
+				//double elapsedTimeInNanos = Math.abs(System.nanoTime() - startTime);
+				//double sleepTimeNanos = drawIntervalNanos - (long) elapsedTimeInNanos;
+				//long sleepTime = (long)(sleepTimeNanos / 1000000);
 				
-				Thread.sleep(sleepTime);
-				System.out.println("startTime = " + startTime);
-				System.out.println("drawInterval = " + drawIntervalNanos);
-				System.out.println("elapsedTimeInNanos = " + elapsedTimeInNanos);
-				System.out.println("sleepTimeNanos = " + sleepTimeNanos);
-				System.out.println("sleepTime = " + sleepTime);
-				System.out.println();
+				//Thread.sleep(sleepTime);
+				//System.out.println("startTime = " + startTime);
+				//System.out.println("drawInterval = " + drawIntervalNanos);
+				//System.out.println("elapsedTimeInNanos = " + elapsedTimeInNanos);
+				//System.out.println("sleepTimeNanos = " + sleepTimeNanos);
+				//System.out.println("sleepTime = " + sleepTime);
+				//System.out.println();
+				Thread.sleep(1000/fPS);
 
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -110,10 +114,11 @@ public class BallPanel extends JPanel implements Runnable {
 	}
 	
 	public void start() {
-		panelThread.start();		
-	}
-	
-	public void stop() {
-		panelThread = null;
+		//isRunning = true;
+		//Thread.startVirtualThread(this);
+		//panelThread = Thread.ofVirtual()
+		//		.name("solarSystemThread")
+		//		.start(this);
+		panelThread.start();
 	}
 }

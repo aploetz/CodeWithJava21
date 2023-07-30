@@ -2,7 +2,7 @@ package chapter9;
 
 import javax.swing.JFrame;
 
-public class CircleDraw {
+public class DrawPlanets {
 
 	public static void main(String[] args) {
 
@@ -12,7 +12,7 @@ public class CircleDraw {
 		frame.setTitle("Planet Orbits");
 		frame.setVisible(true);
 
-		BallPanel panel = new BallPanel();
+		SolarSystem panel = new SolarSystem();
 		frame.add(panel);
 		frame.pack();
 

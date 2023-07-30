@@ -17,19 +17,22 @@ public class Planet {
 		
 		this.color = color;
 		this.diameter = diameter;
-		this.distance = orbit * 200;
-		this.degree = 0;		
 		this.speed = speed;
+		this.distance = orbit * 100;
+		this.degree = 0;		
 	}
 	
 	private void computeNewXY() {
 
-		int distRadius = distance / 2;
-		
-		coordX = (int) (distRadius * Math.cos(degree * Math.PI / 180));
-		coordY = (int) (distRadius * Math.sin(degree * Math.PI / 180));
+		double radians = degree * Math.PI / 180;
+		coordX = (int) (distance * Math.cos(radians));
+		coordY = (int) (distance * Math.sin(radians));
 	}
-	
+
+	private int getRadius() {
+		return diameter / 2;
+	}
+
 	public void update() {
 		degree -= speed;
 		
@@ -54,10 +57,6 @@ public class Planet {
 
 	public int getDiameter() {
 		return diameter;
-	}
-
-	private int getRadius() {
-		return diameter / 2;
 	}
 	
 	public int getDistance() {

@@ -10,20 +10,21 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+
 import javax.swing.JPanel;
 
 public class MyPanel extends JPanel {
 
 	private static final long serialVersionUID = 5433149762760327082L;
 
-	private BufferedImage bpbLogo;
+	private BufferedImage logo;
 	
 	public MyPanel() {
 		this.setPreferredSize(new Dimension(800, 600));
 		this.setBackground(Color.black);
 		this.setFocusable(true);
 		
-		bpbLogo = loadImage("data/bpb.png", 100, 100);
+		logo = loadImage("data/bpb.png", 100, 100);
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -53,7 +54,7 @@ public class MyPanel extends JPanel {
 		g2.fillOval(100,  400,  100, 100);
 		
 		// image w/ BPB logo
-		g2.drawImage(bpbLogo, 250, 400, null);
+		g2.drawImage(logo, 250, 400, null);
 	}
 	
 	private BufferedImage loadImage(String imagePath, int width, int height) {

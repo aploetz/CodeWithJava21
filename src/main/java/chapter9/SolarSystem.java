@@ -57,7 +57,6 @@ public class SolarSystem extends JPanel implements Runnable {
 	@Override
 	public void run() {
 
-		//while (isRunning) {
 		while (panelThread.isAlive()) {
 			//double startTime = System.nanoTime();
 			//double drawIntervalNanos = 1000000000/fPS;
@@ -114,11 +113,6 @@ public class SolarSystem extends JPanel implements Runnable {
 	}
 	
 	public void start() {
-		//isRunning = true;
-		//Thread.startVirtualThread(this);
-		//panelThread = Thread.ofVirtual()
-		//		.name("solarSystemThread")
-		//		.start(this);
 		panelThread.start();
 	}
 }

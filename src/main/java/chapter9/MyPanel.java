@@ -4,17 +4,26 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class MyPanel extends JPanel {
 
 	private static final long serialVersionUID = 5433149762760327082L;
 
+	private BufferedImage bpbLogo;
+	
 	public MyPanel() {
 		this.setPreferredSize(new Dimension(800, 600));
 		this.setBackground(Color.black);
 		this.setFocusable(true);
+		
+		bpbLogo = loadImage("data/bpb.png", 100, 100);
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -42,5 +51,28 @@ public class MyPanel extends JPanel {
 		g2.setColor(new Color(128,0,192));
 		// g2.drawOval(100, 400, 100, 100);
 		g2.fillOval(100,  400,  100, 100);
+		
+		// image w/ BPB logo
+		g2.drawImage(bpbLogo, 250, 400, null);
+	}
+	
+	private BufferedImage loadImage(String imagePath, int width, int height) {
+		BufferedImage scaledImage = null;
+		
+		try {
+			// load image
+			File imgFile = new File(imagePath);
+			BufferedImage image = ImageIO.read(imgFile);
+			// scale image
+			scaledImage = new BufferedImage(width, height, image.getType());
+			Graphics2D g2 = scaledImage.createGraphics();
+			g2.drawImage(image, 0, 0, width, height, null);
+			g2.dispose();
+			
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+		
+		return scaledImage;
 	}
 }

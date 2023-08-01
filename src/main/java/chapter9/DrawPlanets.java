@@ -10,11 +10,11 @@ public class DrawPlanets {
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Planet Orbits");
-		frame.setVisible(true);
 
 		SolarSystem panel = new SolarSystem();
 		frame.add(panel);
 		frame.pack();
+		frame.setVisible(true);
 
 		panel.start();
 	}

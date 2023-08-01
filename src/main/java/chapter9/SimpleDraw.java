@@ -9,10 +9,10 @@ public class SimpleDraw {
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Simple Drawings");
-		frame.setVisible(true);
 
 		MyPanel panel = new MyPanel();
 		frame.add(panel);
 		frame.pack();
+		frame.setVisible(true);
 	}
 }

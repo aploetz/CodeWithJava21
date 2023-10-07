@@ -20,6 +20,6 @@ All sample code works off of a single pom.xml, which is found at the root direct
  - Chapter 6: Common Data Structures _([ch6 code](src/main/java/chapter6))_
  - Chapter 7: Working with Databases _([ch7 code](src/main/java/chapter7))_
  - Chapter 8: Web Applications _([WeatherApp](https://github.com/aploetz/WeatherAppCWJ21))_
- - Chapter 9: Graphics and Animation _([ch9 code](src/main/java/chapter9) - [Java Breakout](https://github.com/aploetz/JavaBreakout))_
+ - Chapter 9: Graphics and Animation _([ch9 code](src/main/java/chapter9) - [JavaBreakout](https://github.com/aploetz/JavaBreakout))_
  - Chapter 10: Final Project _([MovieApp](https://github.com/aploetz/MovieApp) - [MovieAppLoader](https://github.com/aploetz/MovieAppLoader))_
  

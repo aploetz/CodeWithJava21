@@ -13,7 +13,7 @@ All sample code works off of a single pom.xml, which is found at the root direct
 ## Shortcuts to code
 
  - Chapter 1: Introduction _(no runnable code in this chapter)_
- - Chapter 2: Fundamental Programming Structures _([ch2 code]("tree/main/src/main/java/chapter2"))_
+ - Chapter 2: Fundamental Programming Structures _([ch2 code]("src/main/java/chapter2"))_
  - Chapter 3: Strings, Characters, and Regular Expressions _()_
  - Chapter 4: Arrays, Collections, and Records _()_
  - Chapter 5: Arithmetic Operations _()_

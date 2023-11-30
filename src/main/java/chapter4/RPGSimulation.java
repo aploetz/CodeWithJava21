@@ -89,9 +89,9 @@ public class RPGSimulation {
 			System.out.println();
 			
 			// check if player is a hero or a monster
-			if (player instanceof Hero) {
-				if (((Hero) player).isAlive()) {
-					String name = ((Hero) player).getName();
+			if (player instanceof Hero hero) {
+				if (hero.isAlive()) {
+					String name = hero.getName();
 					
 					// pick a random monster
 					int monsterIndex = randomNumber.nextInt(monsters.size());
@@ -99,9 +99,9 @@ public class RPGSimulation {
 					
 					System.out.println(name + " attacks " + targetMonster.name());
 					
-					int attack = ((Hero) player).rollAttack(); 
+					int attack = hero.rollAttack(); 
 					if (attack >= targetMonster.defense) {
-						int damage = ((Hero) player).rollDamage();
+						int damage = hero.rollDamage();
 						System.out.println(name + " rolls a " + attack + " and hits " + targetMonster.name() + " for " + damage + " points.");
 						targetMonster.decrementHitPoints(damage);
 						
@@ -112,20 +112,20 @@ public class RPGSimulation {
 						System.out.println(name + " rolls a " + attack + " and misses " + targetMonster.name()); 					
 					}
 				}
-			} else {
-				if (((Monster) player).isAlive()) {
-					String name = ((Monster) player).name();
+			} else if (player instanceof Monster monster) {
+				if (monster.isAlive()) {
+					String name = monster.name();
 					
 					// pick a random hero
 					int heroIndex = randomNumber.nextInt(heroes.size());
 					Hero targetHero = heroes.get(heroIndex);
 					String heroName = targetHero.getName();
 
-					System.out.println(((Monster) player).name() + " attacks " + heroName);
+					System.out.println(monster.name() + " attacks " + heroName);
 					
-					int attack = ((Monster) player).rollAttack();
+					int attack = monster.rollAttack();
 					if (attack >= targetHero.getDefense()) {
-						int damage = ((Monster) player).rollDamage();
+						int damage = monster.rollDamage();
 						System.out.println(name + " rolls a " + attack + " and hits " + heroName + " for " + damage + " points.");	
 						targetHero.decrementHitPoints(damage);
 						
